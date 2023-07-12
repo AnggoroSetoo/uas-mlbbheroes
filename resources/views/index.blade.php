@@ -183,7 +183,7 @@
                                     </div>
                                 </div>
                                 <a href="{{ route('heroes.detail', $hero->id) }}"
-                                    class="btn btn-warning mt-4">Detail
+                                    class="btn btn-sm btn-warning mt-4">Detail
                                     Hero
                                 </a>
                             </div>
