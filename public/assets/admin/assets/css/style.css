@@ -92,11 +92,11 @@ h6 {
 }
 
 .navbar-admin{
-  background: linear-gradient(
-      90deg,
-      rgba(184, 0, 0, 0.7) 24%,
-      rgba(2, 0, 158, 0.7) 71%
-  );
+  background-color: red;
+}
+
+.text-admin{
+    color: #03D4F0;
 }
 
 .back-to-top i {
@@ -625,11 +625,7 @@ h6 {
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background: linear-gradient(
-      180deg,
-      rgba(184, 0, 0, 0.7) 45%,
-      rgba(2, 0, 158, 0.7) 90%
-  );
+  background-color: rgb(22,26,66);
 }
 
 @media (max-width: 1199px) {

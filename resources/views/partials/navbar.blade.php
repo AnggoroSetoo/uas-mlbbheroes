@@ -1,11 +1,11 @@
 <!-- ======= Header ======= -->
-<header id="header" class="header fixed-top d-flex align-items-center navbar-admin text-white">
+<header id="header" class="header fixed-top d-flex align-items-center" style="background-color:rgb(22,26,66)">
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
             <span class="d-none d-lg-block text-white text-shadow">{{ config('app.name', 'Laravel') }}</span>
         </a>
-        <i class="bi bi-list toggle-sidebar-btn"></i>
+        <i class="bi bi-list toggle-sidebar-btn text-white"></i>
     </div><!-- End Logo -->
 
     <div class="search-bar">
@@ -78,7 +78,7 @@
 
             </li><!-- End Messages Nav -->
 
-            <li class="nav-item dropdown pe-3">
+            <li class="nav-item dropdown pe-3 text-white">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }}
