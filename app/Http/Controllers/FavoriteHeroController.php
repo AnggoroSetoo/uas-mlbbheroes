@@ -6,6 +6,8 @@ use App\Models\FavoriteHero;
 use App\Models\User;
 use App\Models\Hero;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 use Illuminate\View\View;
 
 class FavoriteHeroController extends Controller
@@ -94,5 +96,19 @@ class FavoriteHeroController extends Controller
         $favoritehero->delete();
     
         return redirect('/favoriteheroes')->with('success', "User's Favorite Hero deleted successfully!");
+    }
+    public function save(Request $request)
+    {
+        $validatedData = $request->validate([
+            'users_id' => 'required',
+            'heroes_id' => 'required',
+            'date' => 'required',
+            'notes' => 'required',
+            'rating' => 'required|numeric',
+        ]);
+    
+        FavoriteHero::create($validatedData);
+    
+        return redirect()->back()->with('success', 'Favorite hero saved successfully.');
     }
 }

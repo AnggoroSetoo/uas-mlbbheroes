@@ -11,6 +11,8 @@ use App\Http\Controllers\SpecialtyController;
 use App\Http\Controllers\DifficultyController;
 use App\Http\Controllers\FavoriteHeroController;
 use App\Http\Controllers\UserController;
+use App\Models\FavoriteHero;
+use App\Models\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,18 +25,18 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () { 
-    $heroes = Hero::all(); 
-    $favhero = null;
+Route::get('/', function () {
+    $heroes = Hero::all();
+    $favoriteheroes = FavoriteHero::all();
+    $favhero = [];
 
     if (Auth::check()) {
         $user = Auth::user();
         $favhero = $user->favhero;
     }
- 
-    return view('index', compact('heroes', 'favhero')); 
-});
 
+    return view('index', compact('heroes', 'favhero'));
+});
 Auth::routes();
 
 /*------------------------------------------
@@ -45,6 +47,7 @@ All Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 });
 
 /*------------------------------------------
@@ -82,4 +85,4 @@ Route::get('/listheroes', function () {
 
 Route::get('heroes.detail/{hero}', [HeroController::class, 'detail'])->name('heroes.detail');
 
-
+Route::post('/saveFavoriteHero', [FavoriteHeroController::class, 'save'])->name('saveFavoriteHero');

@@ -79,4 +79,5 @@ class User extends Authenticatable
     { 
         return $this->hasMany(FavoriteHero::class, 'users_id'); 
     }
+    
 }

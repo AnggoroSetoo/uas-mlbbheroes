@@ -49,6 +49,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            
+                    <a class="dropdown-item fw-bolder" href="/#favhero">Favorite Hero</a>
                             @if (Auth::user()->role === 'admin')
                                 <a class="dropdown-item fw-bolder" href="{{ route('admin.home') }}">Dashboard Admin</a>
                             @endif
@@ -56,10 +58,11 @@
                             <a class="dropdown-item fw-bolder" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
+                            </a><form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
                 </div>
             </li>
             @endguest

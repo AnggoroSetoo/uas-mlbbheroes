@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="detail-hero p-5">
-        <a href="/" class="btn btn-md bg-gold fw-bold my-3"><i class="bi bi-arrow-left me-1"></i>Back</a>
+    <section class="detail-hero p-5" style=" margin-top:-40px;">
+        <a href="/" class="btn btn-md bg-gold fw-bold my-3" style="margin-left:-20px;"><i class="bi bi-arrow-left me-1"></i>Back</a>
         <div class="row">
             <div class="container-detail col-lg-10  row py-5 px-3 rounded-3 shadow-xl">
                 <div class="col-md-5 px-5">
@@ -33,7 +33,7 @@
             <div class="container-random d-none d-lg-block">
                 <div class="card aside rounded-3">
                     <div class="card-header bg-dark">
-                        <p class="card-title text-white text-center fw-bolder"> Recomended</p>
+                        <p class="card-title text-white text-center fw-bolder"> Recommended</p>
                     </div>
                     <div class="card-body recom">
                         <ul class="category">

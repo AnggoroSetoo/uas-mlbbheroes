@@ -69,12 +69,16 @@ class LoginController extends Controller
     }
     public function logout(Request $request)
     {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
 
         $heroes = Hero::all();
 
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        
         return view('index', compact('heroes'));
     }
 }

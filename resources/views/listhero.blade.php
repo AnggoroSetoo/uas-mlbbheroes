@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section id="hero" class="container-heroes p-5">
+<section id="hero" class="container-heroes p-3" style="margin-top: -15px">
         <a href="/" class="btn btn-md bg-gold fw-bold my-3"><i class="bi bi-arrow-left me-1"></i>Back</a>
         <div class="hero-title text-center px-1 mx-auto mb-5">
             <h2 class="text-white text-shadow fw-bold">
@@ -22,45 +22,46 @@
                     </form>
                 </div>
             </div>
-            <div class="row row-cols-5">
+            <div class="row row-cols-3">
                 @foreach ($heroes as $hero)
-                    <div class="cols">
-                        <div class="col" ontouchstart="this.classList.toggle('hover');">
-                            <div class="container-card">
-                                <div class="front" style="background-image: url(/assets/img/{{ $hero->poster }}">
-                                    <div class="inner">
-                                        <p>{{ $hero->name }}</p>
-                                        <span>Tap for details</span>
-                                    </div>
+                <div class="cols">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container-card">
+                            <div class="front" style="background-image: url(/assets/img/{{ $hero->poster }}">
+                                <div class="inner">
+                                    <p>{{ $hero->name }}</p>
+                                    <span>Tap for details</span>
                                 </div>
-                                <div class="back">
-                                    <div class="inner">
-                                        <h4 class="card-title font-monospace">
-                                            {{ $hero->name }}
-                                        </h4>
-                                        <hr>
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button"
-                                                    class="btn btn-sm btn-outline-secondary bg-gold fw-bold">{{ $hero->role->name }}</button>
-                                            </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <h4 class="card-title font-monospace">
+                                        {{ $hero->name }}
+                                    </h4>
+                                    <hr>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button"
+                                                class="btn btn-sm btn-outline-secondary bg-gold fw-bold">{{ $hero->role->name }}</button>
                                         </div>
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button"
-                                                    class="btn btn-sm btn-outline-secondary bg-gold fw-bolder">{{ $hero->specialty->name }}</button>
-                                            </div>
-                                        </div>
-                                        <a href="{{ route('heroes.detail', $hero->id) }}" class="btn bg-gold mt-4">Detail
-                                            Hero
-                                        </a>
                                     </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button"
+                                                class="btn btn-sm btn-outline-secondary bg-gold fw-bolder">{{ $hero->specialty->name }}</button>
+                                        </div>
+                                    </div>
+                                    <a href="{{ route('heroes.detail', $hero->id) }}" class="btn bg-gold mt-4">Detail
+                                        Hero
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>
-    </section>
+    </div>
+</section>
 @endsection
